@@ -13,6 +13,8 @@ export default function ComplaintDetail() {
   const [feedback, setFeedback] = useState({ rating: 0, comment: '' });
   const [submittingFeedback, setSubmittingFeedback] = useState(false);
 
+  //data fetching
+
   useEffect(() => { fetchComplaint(); }, [id]);
 
   const fetchComplaint = async () => {

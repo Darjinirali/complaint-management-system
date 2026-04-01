@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 
 // Auth pages
 import LoginPage from './pages/LoginPage';
@@ -69,6 +70,7 @@ function App() {
           <Route path="/" element={<RoleRedirect />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
           {/* User routes */}
           <Route path="/user" element={

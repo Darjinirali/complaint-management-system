@@ -21,46 +21,35 @@ const seed = async () => {
     // Create Admin
     const admin = await User.create({
       name: 'Super Admin',
-      email: 'admin@demo.com',
-      password: 'admin123',
+      email: 'admin0936@gmail.com',
+      password: 'admin1234',
       role: 'admin',
+      isVerified: true,
+      isActive: true,
       phone: '+91 99999 00001'
     });
 
     // Create Officers
     const officer1 = await User.create({
-      name: 'Rahul Sharma',
-      email: 'officer@demo.com',
-      password: 'officer123',
+      name: 'Nishtha Darji',
+      email: 'niiish2003@gmail.com',
+      password: 'nishtha1234',
       role: 'officer',
+      isVerified: true,
+      isActive: true,
       department: 'Technical Support',
       phone: '+91 99999 00002'
     });
 
     const officer2 = await User.create({
-      name: 'Priya Patel',
-      email: 'officer2@demo.com',
-      password: 'officer123',
+      name: 'Nirali Darji',
+      email: 'niralidarji890@gmail.com',
+      password: 'nirali1234',
       role: 'officer',
+      isVerified: true,
+      isActive: true,
       department: 'Billing & Finance',
       phone: '+91 99999 00003'
-    });
-
-    // Create Users
-    const user1 = await User.create({
-      name: 'Amit Kumar',
-      email: 'user@demo.com',
-      password: 'user123',
-      role: 'user',
-      phone: '+91 98765 43210'
-    });
-
-    const user2 = await User.create({
-      name: 'Sneha Joshi',
-      email: 'user2@demo.com',
-      password: 'user123',
-      role: 'user',
-      phone: '+91 87654 32109'
     });
 
     // Create Sample Complaints
@@ -71,13 +60,13 @@ const seed = async () => {
         category: 'Technical',
         priority: 'High',
         status: 'Resolved',
-        submittedBy: user1._id,
+        submittedBy: admin._id,
         assignedTo: officer1._id,
         resolutionDetails: 'The issue was identified as a faulty cable. Our technician replaced it.',
         resolvedAt: new Date(),
         statusHistory: [
-          { status: 'Pending', updatedBy: user1._id, comment: 'Complaint submitted.' },
-          { status: 'Assigned', updatedBy: admin._id, comment: 'Assigned to Rahul Sharma.' },
+          { status: 'Pending', updatedBy: admin._id, comment: 'Complaint submitted.' },
+          { status: 'Assigned', updatedBy: admin._id, comment: 'Assigned to Nishtha Darji.' },
           { status: 'In Progress', updatedBy: officer1._id, comment: 'Investigating the issue.' },
           { status: 'Resolved', updatedBy: officer1._id, comment: 'Cable replaced, issue resolved.' }
         ]
@@ -88,36 +77,12 @@ const seed = async () => {
         category: 'Billing',
         priority: 'Critical',
         status: 'In Progress',
-        submittedBy: user1._id,
+        submittedBy: admin._id,
         assignedTo: officer2._id,
         statusHistory: [
-          { status: 'Pending', updatedBy: user1._id, comment: 'Complaint submitted.' },
-          { status: 'Assigned', updatedBy: admin._id, comment: 'Assigned to Priya Patel.' },
+          { status: 'Pending', updatedBy: admin._id, comment: 'Complaint submitted.' },
+          { status: 'Assigned', updatedBy: admin._id, comment: 'Assigned to Nirali Darji.' },
           { status: 'In Progress', updatedBy: officer2._id, comment: 'Reviewing invoice records.' }
-        ]
-      },
-      {
-        title: 'Support team not responding to emails',
-        description: 'I sent 3 emails to support over the past 5 days and received no response.',
-        category: 'Service',
-        priority: 'Medium',
-        status: 'Pending',
-        submittedBy: user2._id,
-        statusHistory: [
-          { status: 'Pending', updatedBy: user2._id, comment: 'Complaint submitted.' }
-        ]
-      },
-      {
-        title: 'Product delivered in damaged condition',
-        description: 'My order #ORD-789456 was delivered yesterday but the product was broken.',
-        category: 'Product',
-        priority: 'High',
-        status: 'Assigned',
-        submittedBy: user2._id,
-        assignedTo: officer1._id,
-        statusHistory: [
-          { status: 'Pending', updatedBy: user2._id, comment: 'Complaint submitted.' },
-          { status: 'Assigned', updatedBy: admin._id, comment: 'Assigned to technical team.' }
         ]
       },
       {
@@ -126,9 +91,9 @@ const seed = async () => {
         category: 'Technical',
         priority: 'High',
         status: 'Pending',
-        submittedBy: user1._id,
+        submittedBy: admin._id,
         statusHistory: [
-          { status: 'Pending', updatedBy: user1._id, comment: 'Complaint submitted.' }
+          { status: 'Pending', updatedBy: admin._id, comment: 'Complaint submitted.' }
         ]
       }
     ];
@@ -139,13 +104,13 @@ const seed = async () => {
     }
 
     console.log('\n✨ Seed data created successfully!\n');
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-    console.log('📋 Demo Accounts:');
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-    console.log('👑 Admin:    admin@demo.com   / admin123');
-    console.log('🎯 Officer:  officer@demo.com / officer123');
-    console.log('👤 User:     user@demo.com    / user123');
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    console.log('📋 Real Accounts:');
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    console.log('👑 Admin:     admin0936@gmail.com     / admin1234');
+    console.log('🎯 Officer 1: niiish2003@gmail.com    / nishtha1234');
+    console.log('🎯 Officer 2: niralidarji890@gmail.com / nirali1234');
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
 
     process.exit(0);
   } catch (err) {
